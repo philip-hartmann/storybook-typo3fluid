@@ -1,0 +1,27 @@
+{
+	"name": "storybook-typo3fluid",
+	"version": "0.1.0",
+	"description": "Render TYPO3 Fluid templates.",
+	"author": "Philip Hartmann",
+  "keywords": [
+    "addon",
+    "storybook",
+    "template",
+    "typo3",
+    "typo3fluid"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+	"files": [
+    "dist/**/*",
+    "README.md",
+    "*.js"
+  ],
+	"scripts": {
+		"build": "babel ./src --out-dir ./dist"
+	},
+	"dependencies": {
+		"@babel/cli": "^7.18.10"
+	}
+}
