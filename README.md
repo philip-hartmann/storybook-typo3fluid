@@ -50,3 +50,11 @@ const Template = ({ label, ...args }) => {
 ## Limitations
 
 - In stories defined callback functions are not yet supported.
+
+## Static Storybook build
+
+If you want to use a static build of Storybook which needs to access different TYPO3 instance you need to add the environment variables to the build process as such
+
+```sh
+TYPO3FLUID_API_URL="" TYPO3FLUID_API_PASSWORD="" npm run build-storybook
+```
