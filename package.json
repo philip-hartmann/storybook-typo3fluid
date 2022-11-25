@@ -2,31 +2,32 @@
 	"name": "storybook-typo3fluid",
 	"version": "0.1.0",
 	"description": "Render TYPO3 Fluid templates.",
-  "homepage": "https://github.com/philip-hartmann/storybook-typo3fluid",
-  "bugs": {
-    "url": "https://github.com/philip-hartmann/storybook-typo3fluid/issues",
-    "email": "hartm.philip@gmail.com"
-  },
+	"homepage": "https://github.com/philip-hartmann/storybook-typo3fluid",
+	"bugs": {
+		"url": "https://github.com/philip-hartmann/storybook-typo3fluid/issues",
+		"email": "hartm.philip@gmail.com"
+	},
 	"author": "Philip Hartmann",
-  "keywords": [
-    "addon",
-    "storybook",
-    "template",
-    "typo3",
-    "typo3fluid"
-  ],
-  "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+	"keywords": [
+		"addon",
+		"storybook",
+		"template",
+		"typo3",
+		"typo3fluid"
+	],
+	"license": "MIT",
+	"main": "dist/index.js",
+	"module": "dist/index.js",
 	"files": [
-    "dist/**/*",
-    "README.md",
-    "*.js"
-  ],
+		"dist/**/*",
+		"README.md",
+		"*.js"
+	],
 	"scripts": {
 		"build": "babel ./src --out-dir ./dist"
 	},
-	"dependencies": {
-		"@babel/cli": "^7.18.10"
+	"devDependencies": {
+		"@babel/cli": "^7.19.3",
+		"@babel/preset-env": "^7.20.2"
 	}
 }

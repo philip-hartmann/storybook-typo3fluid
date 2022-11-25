@@ -1,0 +1,13 @@
+{
+  "sourceType": "module",
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "shippedProposals": true,
+        "loose": true,
+        "modules": false
+      }
+    ]
+  ]
+}
