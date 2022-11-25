@@ -1,11 +1,15 @@
-const FluidTemplate = ({
+export const FluidTemplate = ({
   extension = '',
   template = '',
   partial = '',
   section = '',
   args = {},
+  api = {},
 }) => {
-  if (!process.env.TYPO3FLUID_API_URL) {
+  const apiUrl = api?.url ?? process.env.STORYBOOK_TYPO3FLUID_API_URL ?? '';
+  const apiPassword = api?.password ?? process.env.STORYBOOK_TYPO3FLUID_API_URL ?? '';
+
+  if (!apiUrl) {
     return 'No TYPO3 Fluid API URL set!';
   }
 
@@ -16,10 +20,10 @@ const FluidTemplate = ({
     partial,
     section,
     'arguments': args,
-    'password': process.env.TYPO3FLUID_API_PASSWORD
+    'password': apiPassword
   };
 
-  request.open('POST', process.env.TYPO3FLUID_API_URL, false);
+  request.open('POST', apiUrl, false);
   request.setRequestHeader('Accept', 'application/json');
   request.setRequestHeader('Content-Type', 'application/json');
   request.send(JSON.stringify(requestBody));
@@ -44,8 +48,4 @@ const FluidTemplate = ({
   }
 
   return 'Something went wrong!';
-};
-
-module.exports = {
-  FluidTemplate
 };

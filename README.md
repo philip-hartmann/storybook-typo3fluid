@@ -17,8 +17,8 @@ npm i storybook-typo3fluid
 Create a `.env` file in your Storybook folder and add the following environment variables which should match with the `typo3fluid-api` extension settings in your TYPO3 instance.
 
 ```sh
-TYPO3FLUID_API_URL="<absolute path to typo3 typo3fluid-api endpoint>"
-TYPO3FLUID_API_PASSWORD=""
+STORYBOOK_TYPO3FLUID_API_URL="<absolute path to typo3 typo3fluid-api endpoint>"
+STORYBOOK_TYPO3FLUID_API_PASSWORD=""
 ```
 
 ## Usage
@@ -47,6 +47,27 @@ const Template = ({ label, ...args }) => {
 };
 ```
 
+## Builder differences
+
+Storybook uses the webpack builder by default which `storybook-typo3fluid` also supports by default. With some changes to your code you can also use `@storybook/builder-vite` with this package.
+
+- Add the `STORYBOOK_` Prefix as an additional envPrefix in your `vite.config.js`.
+
+  ```js
+  export default {
+    envPrefix: [
+      'VITE_',
+      'STORYBOOK_'
+    ]
+  }
+  ```
+
+- Import the Vite entrypoint file in your stories as such:
+
+  ```js
+  import { FluidTemplate } from "storybook-typo3fluid/dist/vite";
+  ```
+
 ## Limitations
 
 - In stories defined callback functions are not yet supported.
@@ -56,5 +77,5 @@ const Template = ({ label, ...args }) => {
 If you want to use a static build of Storybook with access to a different TYPO3 instance you need to add the environment variables to the build process as such:
 
 ```sh
-TYPO3FLUID_API_URL="" TYPO3FLUID_API_PASSWORD="" npm run build-storybook
+STORYBOOK_TYPO3FLUID_API_URL="" STORYBOOK_TYPO3FLUID_API_PASSWORD="" npm run build-storybook
 ```
