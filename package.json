@@ -1,6 +1,6 @@
 {
 	"name": "storybook-typo3fluid",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "Render TYPO3 Fluid templates.",
 	"homepage": "https://github.com/philip-hartmann/storybook-typo3fluid",
 	"bugs": {
