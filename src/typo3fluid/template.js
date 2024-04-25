@@ -7,7 +7,7 @@ export const FluidTemplate = ({
   api = {},
 }) => {
   const apiUrl = api?.url ?? process.env.STORYBOOK_TYPO3FLUID_API_URL ?? '';
-  const apiPassword = api?.password ?? process.env.STORYBOOK_TYPO3FLUID_API_URL ?? '';
+  const apiPassword = api?.password ?? process.env.STORYBOOK_TYPO3FLUID_API_PASSWORD ?? '';
 
   if (!apiUrl) {
     return 'No TYPO3 Fluid API URL set!';
